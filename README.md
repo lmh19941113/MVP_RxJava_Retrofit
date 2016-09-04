@@ -1,0 +1,5 @@
+# MVP_RxJava_Retrofit
+　　本demo的整体上是用MVP+RxJava+Retrofit来实现的，充分的让activity的逻辑部分都放到了presenter里面，实现了逻辑与界面之间的分离，本例子的网络请求部分是用RxJava+retrofit这个组合来实现的，顺便对retrofit再次进行了异常封装，能够更好的用在自己项目中。当然这个demo目前还是有缺点的，其目前缺点如下：
++ 主要是此demo用presenter时没有把presenter与activity、fragment的生命周期进行关联，所以在fragment里面，presenter有可能回报空。
++ 由于此demo直接通过retrofit进行解析数据的，因此我们不能获取到json的格式，所以我们需要先把json格式搞清楚才能解析成功
++ gson解析失败后程序也能正常往下运行，所以当返回结果错误时要看一下gson是否解析正确
